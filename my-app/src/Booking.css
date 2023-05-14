@@ -1,0 +1,143 @@
+.container {
+    background-image: url('/public/booknow.jpeg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+
+}
+
+#form {
+    color: black;
+    text-align: center;
+    margin-left: 62vw;
+    margin-right: 8vw;
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+    background-color: antiquewhite;
+    padding-left: 3vw;
+    padding-right: 3vw;
+
+}
+
+#form h2 {
+    font-size: 1.2rem;
+    padding-bottom: 1vw;
+
+}
+
+#form label {
+    text-align: center;
+}
+
+#date {
+    text-align: center;
+    align-items: center;
+}
+
+#box {
+    padding-top: 0.5vw;
+}
+
+
+#submit {
+    background-color: rgb(246, 224, 195);
+    color: rgb(0, 0, 0);
+    font-size: 1rem;
+    margin-top: 1rem;
+    border-radius: 0.3rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+#submit:hover {
+    background-color: rgb(245, 217, 180);
+}
+
+#bookingOpeningHours h3{
+    text-decoration: underline;
+    padding-bottom: 1vw;
+    
+}
+#bookingOpeningHours{
+    padding-top: 1vw;
+    padding-left: 55vw;
+    position: relative;
+    font-size: 1.1rem;
+    color: #ffffff;
+    text-align: center;
+}
+
+#bookingOpeningHours #weekend {
+    padding-top: 1vw;
+  
+}
+
+#bookingOpeningHours li {
+    list-style-type: none;
+}
+
+
+#bookingContact {
+    max-height: 8vh;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    margin-top: auto;
+    text-align: center;
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+}
+
+#bookingContact a {
+    color: rgb(255, 255, 255);
+    text-decoration: underline;
+    background-color: transparent;
+}
+
+@media (max-width:480px) {
+    .container {
+        background-image: url('/public/booknow1.jpeg');
+        background-position: center;
+    }
+
+    #form {
+        margin: 0vw 8vw;
+        
+    }
+    #bookingOpeningHours h3{
+        text-decoration: underline;
+    }
+    #bookingOpeningHours{
+        padding: 0;
+        text-align: center;
+        line-height: 6vw;
+        position: relative;
+        font-size: 3.5vw;
+        padding-top: 30vw;
+        color: white;
+    }
+   #bookingContact {
+        position: relative;
+        background-color: transparent;
+        padding-top: 5vw;
+        padding-left: 10vw;
+        padding-right: 10vw;
+        padding-bottom: 8vw;
+        font-size: 3.5vw;
+    }
+    #icons{
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 100%;
+        padding-top: 2vw;
+        
+    }
+    #icons i {
+        padding: 0vw ww;
+        
+    }
+
+}

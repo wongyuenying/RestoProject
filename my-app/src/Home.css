@@ -1,0 +1,456 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    font-family: 'Quicksand', sans-serif;
+}
+
+html {
+    overflow-x: hidden;
+    scroll-padding-top: 70px;
+    /* save space for navbar */
+    scroll-behavior: smooth;
+    background-color: black;
+    color: white;
+}
+
+header {
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgb(56, 56, 56);
+    padding: 1.5rem;
+    padding-bottom: 0.5rem;
+    position: fixed;
+    z-index: 9999;
+}
+
+header .logo {
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0.5rem;
+    position: block;
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+#logoImg {
+    float: left;
+    width: 50px;
+    height: 50px;
+    margin-top: -10px;
+
+}
+
+.navbar {
+    float: right;
+
+}
+
+header .navbar a {
+    font-size: 20px;
+    float: left;
+    border-radius: 0.5rem;
+    padding: 0.5rem 2rem;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+
+header .navbar a.active {
+    text-decoration: underline;
+}
+
+.button {
+    background-color: #A53714;
+}
+
+#bookNow:hover {
+    background-color: #7f290f;
+}
+
+header .navbar a:hover {
+    background-color: #434343;
+    border: 2rem;
+}
+
+#menu-icon {
+    display: none;
+    background-color: rgb(56, 56, 56);
+    color: rgb(255, 255, 255);
+    font-size: 25px;
+    float: right;
+    cursor: pointer;
+    margin-top: 1rem;
+    margin-right: 1rem;
+}
+
+#menu-icon:hover {
+    background-color: #272727;
+}
+
+#sushi1 {
+    width: 100%;
+    height: auto;
+}
+
+#menuImg1 {
+    max-width: 50%;
+    float: left;
+    margin-top: 0;
+}
+
+#omakase {
+    padding-left: 27.8%;
+    padding-top: 4%;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 1.4vw;
+}
+
+#menu p {
+    width: 40%;
+    text-align: justify;
+    line-height: 3vw;
+    vertical-align: top;
+    display: inline-block;
+    padding-left: 5vw;
+    padding-top: 1rem;
+    font-size: 1.2vw;
+}
+
+#setdinner {
+    margin-top: 13%;
+    padding-left: 12vw;
+    text-decoration: underline;
+    font-size: 1.4vw;
+    font-weight: bold;
+}
+
+#dinnerPrice {
+    padding-top: 0.5rem;
+    list-style: none;
+    line-height: 2.5vw;
+    padding-left: 12vw;
+    font-size: 1.2vw;
+}
+
+#drinkMenu {
+    background-color: #014b1c;
+    color: rgb(255, 255, 255);
+    font-size: 1.2vw;
+    margin-top: 1rem;
+    margin-left: 12vw;
+    border-radius: 0.3rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    margin-bottom: 8%;
+}
+
+#drinkMenu:hover {
+    background-color: #003313;
+}
+
+#menuImg2 {
+    margin-top: -21vw;
+    max-width: 50%;
+    float: right;
+}
+
+.menu-container {
+    display: flex;
+    flex-direction: row;
+}
+
+#aboutUs {
+    position: relative;
+}
+
+#aboutUsImg {
+    z-index: 1;
+    max-width: 100%;
+}
+
+#aboutUsMobile {
+    display: none;
+}
+
+#openingHours {
+    position: absolute;
+    top: 18vw;
+    left: 9vw;
+    font-size: 1.2vw;
+    text-align: center;
+    line-height: 2.1vw;
+
+}
+
+#openingHours h3 {
+    text-decoration: underline;
+    padding-bottom: 1vw;
+}
+
+#openingHours #weekend {
+    padding-top: 1vw;
+}
+
+#openingHours li {
+    list-style-type: none;
+}
+
+#contact {
+    padding-top: 0.5vw;
+    padding-bottom: 1vw;
+    position: absolute;
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+    width: 100%;
+    text-align: center;
+    top: 46vw;
+    font-size: 1.2vw;
+
+}
+
+#contact a {
+    color: rgb(255, 255, 255);
+    text-decoration: underline;
+    background-color: transparent;
+}
+
+#icons {
+    position: absolute;
+    bottom: 0vw;
+    right: 2vw;
+
+}
+
+#icons i {
+    padding-left: 1vw;
+    font-size: 2vw;
+    color: #fff7e5;
+    cursor: pointer;
+}
+
+#icons i:hover {
+    color: #a3c0ff;
+}
+
+@media (max-width:1024px) {
+    header {
+        padding: 0.7rem;
+        padding-bottom: 0rem;
+    }
+
+    header .navbar a {
+        font-size: 18px;
+        padding: 0.5rem 1.5rem;
+        color: white;
+        text-align: center;
+    }
+
+    header .logo {
+        margin-top: -2px;
+        float: left;
+        font-size: 18px;
+    }
+
+    #logoImg {
+        padding: 0.2rem 0rem;
+        margin-right: 0.5rem;
+        width: 35px;
+        height: auto;
+    }
+
+    #sushi1 {
+        padding-top: 10vw;
+        padding-bottom: 10vw;
+        width: 100%;
+    }
+
+    #menu {
+        padding-top: 10vw;
+        padding-bottom: 10vw;
+    }
+
+}
+
+@media (max-width:768px) {
+    header {
+        padding: 0;
+        padding-bottom: 0;
+    }
+
+    header .logo {
+        float: left;
+        font-size: 18px;
+        padding-top: 1.2rem;
+    }
+
+
+    #logoImg {
+        margin-left: 0.7rem;
+        margin-right: 0.5rem;
+        width: 35px;
+        height: auto;
+    }
+
+    header .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #272727;
+        width: 0;
+        overflow: hidden;
+    }
+
+    header .navbar.active {
+        width: 100%;
+    }
+
+    header .navbar a {
+        display: block;
+        width: 100%;
+        padding: 0.5rem;
+        margin: 0.5rem;
+        font-size: 15px;
+        background-color: #272727;
+    }
+
+    #menu-icon {
+        display: block;
+    }
+}
+
+@media (max-width:480px) {
+
+    header {
+        padding: 0rem;
+        padding-bottom: 0rem;
+    }
+
+    #menu-icon {
+        display: block;
+    }
+
+    #sushi1 {
+        padding-top: 80vw;
+        padding-bottom: 80vw;
+    }
+
+    #menu {
+        padding: 0;
+    }
+
+    #menuImg1,
+    #menuImg2 {
+        max-width: 100%;
+        margin-top: 0;
+        text-align: center;
+        display: block;
+    }
+
+    #menuImg2 {
+        padding: 0;
+        display: block;
+    }
+
+    #omakase,
+    #menu p,
+    #setdinner,
+    #dinnerPrice {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        text-align: center;
+        font-size: 3vw;
+        line-height: 6vw;
+    }
+
+    #omakase {
+        padding-top: 1rem;
+    }
+
+    #menu p {
+        padding: 0rem 2rem;
+        text-align: justify;
+    }
+
+    #setdinner {
+        padding-top: 7vw;
+    }
+
+    #dinnerPrice {
+        padding-bottom: 5vw;
+    }
+
+    #drinkMenu {
+        margin: 0 auto;
+        display: block;
+        align-items: center;
+        text-align: center;
+        font-size: 3vw;
+    }
+
+    #aboutUsImg {
+        display: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    #aboutUsMobile {
+        display: flex;
+        max-width: 100%;
+        padding-top: 70vw;
+        padding-bottom: 60vw;
+
+    }
+
+    #aboutUs {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    #openingHours,
+    #contact,
+    #icons {
+        text-align: center;
+        font-size: 3vw;
+        line-height: 6vw;
+        padding: 0;
+        margin: 0;
+    }
+
+    #openingHours {
+        padding-top: 10vw;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    #contact {
+        align-self: flex-start;
+        margin-top: 110vw;
+    }
+
+    #icons {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 110%;
+
+    }
+
+    #icons i {
+        padding: 0 1vw;
+        font-size: 6vw;
+    }
+}
