@@ -1,17 +1,47 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Nav from 'react-bootstrap/Nav';
 import "./Home.css";
-import { BrowserRouter as Router, Switch, Route, Routes } from 'react-router-dom';
-
+import imageSlide from "./imageSlide";
 const Home = (props) => {
 
     const [showNavbar, setShowNavbar] = useState(false)
-
+    const [animationKey, setAnimationKey] = useState(0);
     const handleShowNavbar = () => {
         setShowNavbar(!showNavbar)
     }
- 
 
+    const [currentState, setCurrentState] = useState(0)
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            if (currentState === 3) {
+                setCurrentState(0)
+            } else {
+                setCurrentState(currentState + 1)
+            }
+        }, 5000)
+        setAnimationKey(prevKey => prevKey +1);
+        return () => clearTimeout(timer)
+    }, [currentState]
+
+    )
+
+
+
+    const bgImageStyle = {
+        backgroundImage: `url(${imageSlide[currentState].url})`,
+        backgroundPosition: 'center',
+        backgroundSize: 'contain',
+        backgroundRepeat: 'no-repeat',
+        width: '100%',
+        height: '100%',
+        paddingBottom: '50%',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center'
+    }
+    const goToNext = () => {
+        setCurrentState(currentState)
+    }
     return (
 
         <div>
@@ -32,7 +62,23 @@ const Home = (props) => {
             </header>
             <div >
                 <div id="home" className="m-5">
-                    <img src="sushi1.jpeg" id="sushi1"></img>
+                    <div id="slider">
+                        <div style={bgImageStyle}></div>
+                        <div id="description"  key={animationKey}>
+                            <div>
+                                <h1>{imageSlide[currentState].title}</h1>
+                            </div>
+                            <div className="carousel-boullt">
+                                {
+                                    imageSlide.map((imageSlide, currentState) => {
+                                        <span key={currentState} onClick={() => goToNext(currentState)}>111</span>
+                                    })
+                                }
+
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
                 <div id="menu">
@@ -59,8 +105,9 @@ const Home = (props) => {
                 </div>
 
                 <div id="aboutUs">
-                    <img src="aboutus.jpg" id="aboutUsImg"></img>
-
+                    <div id="aboutUsImgContainer">
+                        <img src="aboutus.jpg" id="aboutUsImg"></img>
+                    </div>
                     <div id="openingHours">
                         <h3>OPENING HOURS</h3>
                         <ul>

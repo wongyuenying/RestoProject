@@ -3,7 +3,7 @@
     background-size: cover;
     background-position: center;
     height: 100vh;
-
+    
 }
 
 #form {
@@ -78,16 +78,16 @@
 
 
 #bookingContact {
-    max-height: 8vh;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 1rem;
-    margin-top: auto;
-    text-align: center;
-    background-color: #000000;
+      z-index: 2;
+    padding-top: 0.5vw;
+    padding-bottom: 1vw;
+    position: absolute;
+    background-color: transparent;
     color: rgb(255, 255, 255);
+    width: 100%;
+    text-align: center;
+    top: 90%;
+    font-size: 1.2vw;
 }
 
 #bookingContact a {
@@ -100,11 +100,13 @@
     .container {
         background-image: url('/public/booknow1.jpeg');
         background-position: center;
+    
     }
 
     #form {
-        margin: 0vw 8vw;
-        
+        margin: -8vw 8vw;
+        top: 0%;
+
     }
     #bookingOpeningHours h3{
         text-decoration: underline;
@@ -115,16 +117,18 @@
         line-height: 6vw;
         position: relative;
         font-size: 3.5vw;
-        padding-top: 30vw;
-        color: white;
+        padding-top: 13vw;
+        color: rgb(255, 255, 255);
+        text-shadow: 2px 2px #020202;
+        font-weight: bold;
     }
    #bookingContact {
-        position: relative;
+ 
         background-color: transparent;
-        padding-top: 5vw;
-        padding-left: 10vw;
-        padding-right: 10vw;
-        padding-bottom: 8vw;
+        align-self: flex-start;
+        line-height: 6vw;
+        top: 0%;
+        margin-top: 150vw;
         font-size: 3.5vw;
     }
     #icons{
@@ -136,7 +140,7 @@
         
     }
     #icons i {
-        padding: 0vw ww;
+        padding: 0vw 10vw;
         
     }
 

@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.4934d2df.css",
-    "main.js": "/static/js/main.716a8eb3.js",
+    "main.css": "/static/css/main.6ac4acc1.css",
+    "main.js": "/static/js/main.779eb674.js",
     "static/media/booknow.jpeg": "/static/media/booknow.be0596b493855e32d8bd.jpeg",
     "static/media/booknow1.jpeg": "/static/media/booknow1.919e7d93ac924d208392.jpeg",
     "index.html": "/index.html",
-    "main.4934d2df.css.map": "/static/css/main.4934d2df.css.map",
-    "main.716a8eb3.js.map": "/static/js/main.716a8eb3.js.map"
+    "main.6ac4acc1.css.map": "/static/css/main.6ac4acc1.css.map",
+    "main.779eb674.js.map": "/static/js/main.779eb674.js.map"
   },
   "entrypoints": [
-    "static/css/main.4934d2df.css",
-    "static/js/main.716a8eb3.js"
+    "static/css/main.6ac4acc1.css",
+    "static/js/main.779eb674.js"
   ]
 }
