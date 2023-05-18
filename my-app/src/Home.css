@@ -77,6 +77,7 @@ header .navbar a.active {
 header .navbar a:hover {
     background-color: #434343;
     border: 2rem;
+    cursor: pointer;
 }
 
 #menu-icon {
@@ -279,13 +280,12 @@ header .navbar a:hover {
 
 #aboutUs {
     position: relative;
-    height: 90vh;
+    height: 100vh;
     overflow: hidden;
-    margin-bottom: 1vw;
+  
 }
 
 #aboutUsImg {
-    z-index: 1;
     width: 100%;
     height: auto;
     position: absolute;
@@ -453,7 +453,13 @@ header .navbar a:hover {
     #menu-icon {
         display: block;
     }
-
+#bookNow{
+    color: #e90c00;
+}
+#bookNow:hover{
+    color: #ffffff;
+    background-color: #6f0a04;
+}
     .swiper-slide-title{
        bottom: 4%;
         font-size: 4.5vw;

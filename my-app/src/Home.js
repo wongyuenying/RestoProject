@@ -1,44 +1,41 @@
 import React, { useEffect, useState, useRef } from "react";
 import Nav from 'react-bootstrap/Nav';
+import { Link } from 'react-scroll';
 import "./Home.css";
 import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
 const Home = (props) => {
-
+    const [activeSection, setActiveSection] = useState('home');
     const [showNavbar, setShowNavbar] = useState(false)
     const swiperRef = useRef(null);
     const handleShowNavbar = () => {
         setShowNavbar(!showNavbar)
     }
-    const swiper = new Swiper('.swiper', {
-        autoplay: {
-            delay: 5000,
 
-        },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        pagination: {
-            el: '.swiper-pagination',
-            type: 'bullets',
-        },
-        scrollbar: {
-            el: '.swiper-scrollbar',
-            draggable: true,
-            clickable: true,
-        },
-        effect: 'coverflow',
-        coverflowEffect: {
-            rotate: 30,
-            slideShadows: false,
-        },
-    });
+    const handleScroll = () => {
+        const homeSection = document.getElementById('home').offsetTop;
+        const menuSection = document.getElementById('menu').offsetTop;
+        const aboutUsSection = document.getElementById('aboutUs').offsetTop;
+      
+        const scrollPosition = window.scrollY;
+        const offset = 100; // Adjust this value as needed
+      
+        if (scrollPosition < menuSection - offset) {
+          setActiveSection('home');
+        } else if (scrollPosition < aboutUsSection - offset) {
+          setActiveSection('menu');
+        } else {
+          setActiveSection('aboutUs');
+        }
+        console.log(window.scrollY);
+        console.log(menuSection);
+        console.log(aboutUsSection);
+      };
 
     useEffect(() => {
         swiperRef.current = new Swiper(".swiper", {
             autoplay: {
-                delay: 4000,
+                delay: 5000,
                 disableOnInteraction: false,
             },
             navigation: {
@@ -62,8 +59,10 @@ const Home = (props) => {
 
         });
 
-        return () => {
+        window.addEventListener('scroll', handleScroll);
 
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
             if (swiperRef.current) {
                 swiperRef.current.destroy();
             }
@@ -76,11 +75,20 @@ const Home = (props) => {
             <header>
                 <div>
                     <a href="#home" className="logo"><img src="logo.png" id="logoImg"></img> RESTO</a>
+
                     <Nav defaultActiveKey="#home" className={`navbar ${showNavbar && 'active'}  `} onClick={handleShowNavbar}>
-                        <Nav.Link href="#home" > Home</Nav.Link>
-                        <Nav.Link href="#menu"> Menu </Nav.Link>
-                        <Nav.Link href="#aboutUs"> About Us </Nav.Link>
-                        <Nav.Link href="/booking" className="button" id="bookNow"> Book Now </Nav.Link>
+                        <Nav.Link as={Link} to="home" smooth={true} spy={true} duration={50} active={activeSection === 'home'}>
+                            Home
+                        </Nav.Link>
+                        <Nav.Link as={Link} to="menu" smooth={true} spy={true} duration={50} active={activeSection === 'menu'}>
+                            Menu
+                        </Nav.Link>
+                        <Nav.Link as={Link} to="aboutUs" smooth={true} spy={true} duration={50}  active={activeSection === 'aboutUs'}>
+                            About Us
+                        </Nav.Link>
+                        <Nav.Link href="/booking" className="button" id="bookNow">
+                            Book Now
+                        </Nav.Link>
                     </Nav>
 
                     <div className="icons">
