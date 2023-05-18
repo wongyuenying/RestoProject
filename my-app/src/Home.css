@@ -100,25 +100,81 @@ header .navbar a:hover {
     font-family: 'Cormorant Garamond', serif;
 }
 
-#slider {
-    position: relative;
-    max-width: 100%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.swiper {
+    width: 100%;
+    height: 100%;
 }
 
-#description {
+.swiper-wrapper {
+    position: relative;
     width: 100%;
-    position: absolute;
+    height: 100%;
+    z-index: 1;
+    background-size: contain;
+    display: flex;
+    cursor: grab;
+}
+
+.swiper-slide {
     text-align: center;
-    right: 0;
     font-size: 1vw;
-    top: 88%;
+    display: flex;
+    background: #000000;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+
+}
+
+.image-container {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    text-shadow: 3px 3px #000000;
+    font-size: 1vw;
+}
+
+.swiper .swiper-button-prev,
+.swiper .swiper-button-next {
+    color: #949494;
+    cursor: pointer;
+}
+
+.swiper .swiper-button-prev:hover,
+.swiper .swiper-button-next:hover {
+    color: #4d4d4d;
+}
+
+.swiper-slide img {
+    width: 100%;
+    display: block;
+    height: auto;
+    position: relative;
+    font-size: 1vw;
+}
+
+.swiper .swiper-pagination {
+    padding: 0px 0px;
+    border-radius: 4px;
+    background: transparent;
+}
+
+.swiper .swiper-pagination * {
+    background: #b0b0b0;
+}
+
+.swiper-slide-title {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    font-size: 2.5vw;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
     opacity: 0;
     animation-delay: 2s;
     animation: fadeIn 2.5s;
@@ -127,75 +183,24 @@ header .navbar a:hover {
     -o-animation: fadeIn 2.5s;
     -ms-animation: fadeIn 2.5s;
     animation-fill-mode: forwards;
+    font-style: italic;
 }
-
-#description.show {
-    opacity: 1;
-}
-
 @keyframes fadeIn {
     from {
         opacity: 0
-    }
-
-    to {
+      }
+      to {
         opacity: 1
-    }
+      }
 }
 
-@-moz-keyframes fadeIn {
-    from {
-        opacity: 0
-    }
-
-    to {
-        opacity: 1
-    }
-}
-
-@-webkit-keyframes fadeIn {
-    from {
-        opacity: 0
-    }
-
-    to {
-        opacity: 1
-    }
-}
-
-@-o-keyframes fadeIn {
-    from {
-        opacity: 0
-    }
-
-    to {
-        opacity: 1
-    }
-}
-
-@-ms-keyframes fadeIn {
-    from {
-        opacity: 0
-    }
-
-    to {
-        opacity: 1
-    }
-}
-
-.carousel-boullt {
+#slider {
+    position: relative;
+    max-width: 100%;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-
-}
-
-.carousel-boullt span {
-    width: 45px;
-    height: 12px;
-    background-color: white;
-    margin-left: 10px;
-    border-radius: 10px;
 }
 
 #menu {
@@ -330,8 +335,6 @@ header .navbar a:hover {
     text-align: center;
     top: 90%;
     font-size: 1.2vw;
-
-
 }
 
 #contact a {
@@ -402,7 +405,6 @@ header .navbar a:hover {
         padding-top: 1.2rem;
     }
 
-
     #logoImg {
         margin-left: 0.7rem;
         margin-right: 0.5rem;
@@ -439,9 +441,10 @@ header .navbar a:hover {
 }
 
 @media (max-width:480px) {
-html{
-    scroll-padding-top: 1.5rem;
-}
+    html {
+        scroll-padding-top: 1.5rem;
+    }
+
     header {
         padding: 0rem;
         padding-bottom: 0rem;
@@ -451,20 +454,20 @@ html{
         display: block;
     }
 
-    #home {
-        padding-bottom: 60vw;
-        
+    .swiper-slide-title{
+       bottom: 4%;
+        font-size: 4.5vw;
     }
-    #description {
-        width: 100%;
+    .swiper .swiper-pagination {
         position: absolute;
-        text-align: center;
-        top: 60%;
-        left: 50%;
-        font-size: 2vw;
+        padding-bottom: 55vw;
 
     }
-
+    .swiper .swiper-button-prev,
+    .swiper .swiper-button-next {
+        display: none;
+    }
+    
     #menu {
         padding: 0;
     }
@@ -519,8 +522,8 @@ html{
         align-items: center;
         text-align: center;
         font-size: 3vw;
-        position:relative;
-        
+        position: relative;
+
     }
 
     #aboutUsImg {
@@ -532,9 +535,8 @@ html{
     #aboutUsMobile {
         display: flex;
         max-width: 100%;
-        padding-top:53vw;
+        padding-top: 53vw;
         padding-bottom: 0vw;
-
     }
 
     #aboutUs {
@@ -556,7 +558,7 @@ html{
         line-height: 6vw;
         padding: 0;
         margin: 0;
-        
+
     }
 
     #openingHours {
@@ -583,6 +585,6 @@ html{
     #icons i {
         padding: 0 10vw;
         font-size: 6vw;
-        
+
     }
 }

@@ -1,47 +1,75 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Nav from 'react-bootstrap/Nav';
 import "./Home.css";
-import imageSlide from "./imageSlide";
+import Swiper from 'swiper/bundle';
+import 'swiper/css/bundle';
 const Home = (props) => {
 
     const [showNavbar, setShowNavbar] = useState(false)
-    const [animationKey, setAnimationKey] = useState(0);
+    const swiperRef = useRef(null);
     const handleShowNavbar = () => {
         setShowNavbar(!showNavbar)
     }
+    const swiper = new Swiper('.swiper', {
+        autoplay: {
+            delay: 5000,
 
-    const [currentState, setCurrentState] = useState(0)
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            type: 'bullets',
+        },
+        scrollbar: {
+            el: '.swiper-scrollbar',
+            draggable: true,
+            clickable: true,
+        },
+        effect: 'coverflow',
+        coverflowEffect: {
+            rotate: 30,
+            slideShadows: false,
+        },
+    });
+
     useEffect(() => {
-        const timer = setTimeout(() => {
-            if (currentState === 3) {
-                setCurrentState(0)
-            } else {
-                setCurrentState(currentState + 1)
+        swiperRef.current = new Swiper(".swiper", {
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                type: "bullets",
+            },
+            scrollbar: {
+                el: ".swiper-scrollbar",
+                draggable: true,
+                clickable: true,
+            },
+            effect: "coverflow",
+            coverflowEffect: {
+                rotate: 30,
+                slideShadows: false,
+            },
+
+        });
+
+        return () => {
+
+            if (swiperRef.current) {
+                swiperRef.current.destroy();
             }
-        }, 5000)
-        setAnimationKey(prevKey => prevKey +1);
-        return () => clearTimeout(timer)
-    }, [currentState]
+        };
+    }, []);
 
-    )
-
-
-
-    const bgImageStyle = {
-        backgroundImage: `url(${imageSlide[currentState].url})`,
-        backgroundPosition: 'center',
-        backgroundSize: 'contain',
-        backgroundRepeat: 'no-repeat',
-        width: '100%',
-        height: '100%',
-        paddingBottom: '50%',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center'
-    }
-    const goToNext = () => {
-        setCurrentState(currentState)
-    }
     return (
 
         <div>
@@ -62,23 +90,42 @@ const Home = (props) => {
             </header>
             <div >
                 <div id="home" className="m-5">
-                    <div id="slider">
-                        <div style={bgImageStyle}></div>
-                        <div id="description"  key={animationKey}>
-                            <div>
-                                <h1>{imageSlide[currentState].title}</h1>
-                            </div>
-                            <div className="carousel-boullt">
-                                {
-                                    imageSlide.map((imageSlide, currentState) => {
-                                        <span key={currentState} onClick={() => goToNext(currentState)}>111</span>
-                                    })
-                                }
+                    <div className="swiper">
 
+                        <div className="swiper-wrapper">
+
+                            <div className="swiper-slide">
+                                <div className="image-container">
+                                    <img src="sushi1.jpeg"></img>
+                                    <div className="swiper-slide-title">"A true testament to the artistry of Japanese cuisine."</div>
+                                </div>
+                            </div>
+                            <div className="swiper-slide">
+                                <div className="image-container">
+                                    <img src="sushi2.jpeg"></img>
+                                </div>
+                            </div>
+                            <div className="swiper-slide">
+                                <div className="image-container">
+                                    <img src="sushi3.jpeg"></img>
+                                    <div className="swiper-slide-title"></div>
+                                </div>
+                            </div>
+                            <div className="swiper-slide">
+                                <div className="image-container">
+                                    <img src="sushi4.jpeg"></img>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
+                        <div className="swiper-pagination"></div>
+
+                        <div className="swiper-button-prev"></div>
+                        <div className="swiper-button-next"></div>
+
+
+                        <div className="swiper-scrollbar"></div>
+                    </div>
                 </div>
 
                 <div id="menu">
