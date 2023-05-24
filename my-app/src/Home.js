@@ -156,10 +156,11 @@ const Home = (props) => {
                                 <li>Price: $220 pp</li>
                                 <li>Beverage Pairing: $130 pp</li>
                             </ul>
-                            <button id="drinkMenu" onClick={toggleModal} className="btn-modal"> Drink Menu</button>
+                            <button id="drinkMenu" className="btn-modal"> <a href="drinkmenu.pdf" target="_blank">Drink Menu </a></button>
 
 
-                            
+                           
+
                         </div>
                         <div id="grid4">
                             <p>PERSONALIZED</p>

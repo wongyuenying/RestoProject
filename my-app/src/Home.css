@@ -295,7 +295,10 @@ header .navbar a:hover {
     margin-bottom: 8%;
     font-family: 'Playfair Display', serif;
 }
-
+#drinkMenu a{
+    text-decoration: none;
+    color: white;
+}
 #drinkMenu:hover {
     background-color: #565902;
 }
