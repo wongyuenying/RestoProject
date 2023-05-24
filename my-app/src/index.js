@@ -2,15 +2,10 @@ import React from 'react';
 import ReactDom from 'react-dom';
 import { App } from "./App";
 import {BrowserRouter} from "react-router-dom"
-import firebase from 'firebase/app';
 import 'firebase/analytics';
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyA1BWHNc1bpsb3bp_mRXzXTSDnk0fuQ0wc",
   authDomain: "restoproject-7ea53.firebaseapp.com",

@@ -41,10 +41,10 @@ const Booking = (props) => {
                 <div>
                     <a href="/#home" className="logo"><img src="logo.png" id="logoImg"></img> RESTO</a>
                     <Nav defaultActiveKey="/booking" className={`navbar ${showNavbar && 'active'}  `} onClick={handleShowNavbar}>
-                        <Nav.Link href="/#home" > Home</Nav.Link>
-                        <Nav.Link href="/#menu"> Menu </Nav.Link>
-                        <Nav.Link href="/#aboutUs"> About Us </Nav.Link>
-                        <Nav.Link href="/booking" className="button" id="bookNow"> Book Now </Nav.Link>
+                        <Nav.Link href="/#home" > HOME</Nav.Link>
+                        <Nav.Link href="/#menu"> MENU </Nav.Link>
+                        <Nav.Link href="/#aboutUs"> CONTACT </Nav.Link>
+                        <Nav.Link href="/booking" className="button" id="bookNow"> BOOK NOW </Nav.Link>
                     </Nav>
 
                     <div className="icons">

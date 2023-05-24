@@ -8,6 +8,12 @@ const Home = (props) => {
     const [activeSection, setActiveSection] = useState('home');
     const [showNavbar, setShowNavbar] = useState(false)
     const swiperRef = useRef(null);
+    const [modal, setModal] = useState(false);
+
+    const toggleModal = () => {
+        setModal(!modal);
+    };
+
     const handleShowNavbar = () => {
         setShowNavbar(!showNavbar)
     }
@@ -16,21 +22,18 @@ const Home = (props) => {
         const homeSection = document.getElementById('home').offsetTop;
         const menuSection = document.getElementById('menu').offsetTop;
         const aboutUsSection = document.getElementById('aboutUs').offsetTop;
-      
+
         const scrollPosition = window.scrollY;
-        const offset = 100; // Adjust this value as needed
-      
+        const offset = 100;
+
         if (scrollPosition < menuSection - offset) {
-          setActiveSection('home');
+            setActiveSection('home');
         } else if (scrollPosition < aboutUsSection - offset) {
-          setActiveSection('menu');
+            setActiveSection('menu');
         } else {
-          setActiveSection('aboutUs');
+            setActiveSection('aboutUs');
         }
-        console.log(window.scrollY);
-        console.log(menuSection);
-        console.log(aboutUsSection);
-      };
+    };
 
     useEffect(() => {
         swiperRef.current = new Swiper(".swiper", {
@@ -77,17 +80,17 @@ const Home = (props) => {
                     <a href="#home" className="logo"><img src="logo.png" id="logoImg"></img> RESTO</a>
 
                     <Nav defaultActiveKey="#home" className={`navbar ${showNavbar && 'active'}  `} onClick={handleShowNavbar}>
-                        <Nav.Link as={Link} to="home" smooth={true} spy={true} duration={50} active={activeSection === 'home'}>
-                            Home
+                        <Nav.Link as={Link} to="home" onClick={handleShowNavbar} smooth={true} spy={true} duration={50} active={activeSection === 'home'}>
+                            HOME
                         </Nav.Link>
-                        <Nav.Link as={Link} to="menu" smooth={true} spy={true} duration={50} active={activeSection === 'menu'}>
-                            Menu
+                        <Nav.Link as={Link} to="menu" onClick={handleShowNavbar} smooth={true} spy={true} duration={50} active={activeSection === 'menu'}>
+                            MENU
                         </Nav.Link>
-                        <Nav.Link as={Link} to="aboutUs" smooth={true} spy={true} duration={50}  active={activeSection === 'aboutUs'}>
-                            About Us
+                        <Nav.Link as={Link} to="aboutUs" onClick={handleShowNavbar} smooth={true} spy={true} duration={50} active={activeSection === 'aboutUs'}>
+                            CONTACT
                         </Nav.Link>
-                        <Nav.Link href="/booking" className="button" id="bookNow">
-                            Book Now
+                        <Nav.Link href="/booking" onClick={handleShowNavbar} className="button" id="bookNow">
+                            BOOK NOW
                         </Nav.Link>
                     </Nav>
 
@@ -138,23 +141,29 @@ const Home = (props) => {
 
                 <div id="menu">
                     <div className="menu-container">
-                        <div>
+                        <div id="grid1">
+                            <p>CREATIVITY</p>
                             <img src="menu1.jpeg" id="menuImg1"></img>
+                        </div>
+                        <div id="grid2">
                             <h3 id="omakase">OMAKASE (お任せ)</h3>
                             <p>Experience an elevated culinary journey at RESTO with our Omakase 8-course set dinner. Meticulously curated by our chefs, each dish embodies the essence of Japanese cuisine with the freshest seasonal ingredients.</p>
+                        </div>
+                        <div id="grid3">
+                            <h3 id="setdinner">SET DINNER</h3>
+                            <ul id="dinnerPrice">
+                                <li>8 - 10 Courses Set</li>
+                                <li>Price: $220 pp</li>
+                                <li>Beverage Pairing: $130 pp</li>
+                            </ul>
+                            <button id="drinkMenu" onClick={toggleModal} className="btn-modal"> Drink Menu</button>
 
-                            <div>
-                                <h3 id="setdinner" style={{ fontWeight: "bold" }} >SET DINNER</h3>
-                                <ul id="dinnerPrice">
-                                    <li>8 - 10 Courses Set</li>
-                                    <li>Price: $220 pp</li>
-                                    <li>Beverage Pairing: $130 pp</li>
-                                </ul>
-                                <button id="drinkMenu"> Drink Menu</button>
 
-                                <img src="menu2.jpeg" id="menuImg2"></img>
-                            </div>
-
+                            
+                        </div>
+                        <div id="grid4">
+                            <p>PERSONALIZED</p>
+                            <img src="menu2.jpeg" id="menuImg2"></img>
                         </div>
                     </div>
                 </div>
@@ -176,7 +185,7 @@ const Home = (props) => {
                     </div>
                     <img src="aboutus-mobile.avif" id="aboutUsMobile"></img>
                     <div id="contact">
-                        <a href="tel:+61 2 1234 5678"><p> +61 2 1234 5678 </p></a>
+                        <a href="tel:+61 2 1234 5678"> <i class="fa-regular fa-phone-hangup"></i><p> +61 02 1234 5678 </p></a>
                         <p> 123 Swanston Street, Carlton VIC 3053, Australia</p>
                         <div id="icons">
                             <a href="http://www.facebook.com"><i class="fa-brands fa-square-facebook"></i></a>
