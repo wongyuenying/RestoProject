@@ -16,9 +16,8 @@ const Navbar = () => {
   return (
 
     <div>
-      <a href="#home" className="logo"><img src="logo.png" id="logoImg"></img> RESTO</a>
+      <a href="#home" className="logo"><img src="new_logo.png" id="logoImg"></img></a>
       <Nav defaultActiveKey="#home" className={`navbar ${showNavbar && 'active'}  `} onClick={handleShowNavbar}>
-        <Nav.Link href="#home" > Home</Nav.Link>
         <Nav.Link href="#menu" onClick={handleActive}> Menu </Nav.Link>
         <Nav.Link href="#aboutUs"> About Us </Nav.Link>
         <Nav.Link href="/booking" className="button" id="bookNow"> <Booking /> Book Now </Nav.Link>
